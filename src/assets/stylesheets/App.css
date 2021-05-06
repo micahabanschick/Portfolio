@@ -17,14 +17,14 @@
 
 .App-header {
   -webkit-clip-path: polygon(0 0%, 100% 0%, 100% 90%, 0% 100%);
-  clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% calc(100% - 3.0vw));
-  margin-bottom: -3.1vw;
+  clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% calc(100% - 2.6em));
+  margin-bottom: -2.7em;
 }
 
 .App-footer {
   -webkit-clip-path: polygon(0 0%, 100% 0%, 100% 90%, 0% 100%);
-  clip-path: polygon(0 30%, 100% 0%, 100% 100%, 0% calc(100% - 0vw));
-  margin-top: -3.1vw;
+  clip-path: polygon(0 30%, 100% 0%, 100% 100%, 0% 100%);
+  margin-top: -3em;
 }
 
 .App-header, .App-footer {

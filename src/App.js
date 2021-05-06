@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/stylesheets/App.css';
+import './assets/stylesheets/responsive.css';
 import Header from './components/semantics/Header'
 // import NavBar from './components/semantics/NavBar'
 import Section from './components/semantics/Section'
