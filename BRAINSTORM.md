@@ -14,12 +14,12 @@ This file is the main location to write down and deliberate on what I want done,
 
 [x] 4. Add simple static styles in App.css
 
-[ ] 5. Create initial semantic components and initial styles
-[ ]     a. Header.js
-[ ]     b. Nav.js
-[ ]     c. Main.js
-[ ]     d. Section.js
-[ ]     e. Article.js
+[?] 5. Create initial semantic components and initial styles
+[x]     a. Header.js
+[x]     b. Nav.js
+[?]     c. Main.js
+[x]     d. Section.js
+[x]     e. Article.js
 [ ]     f. Aside.js
 [ ]     g. Figure.js
-[ ]     h. Footer.js
+[x]     h. Footer.js

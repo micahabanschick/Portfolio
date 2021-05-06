@@ -6,13 +6,91 @@
   --dark-shades: rgb(51, 31, 49); /* Background color for inverted designs/Text color for dark on light designs  */
   --app-light-background: linear-gradient(45deg, rgb(245, 209, 131), rgba(245, 209, 131, 0.274));
   --app-dark-background: linear-gradient(45deg, rgb(51, 31, 49), rgba(51, 31, 49, 0.329));
+  --app-main-brand-background: linear-gradient(45deg, rgb(49, 97, 120), rgba(49, 98, 120, 0.671));
 }
 
 .App {
   text-align: center;
-  background-image: var(--app-light-background);
+  /* background-image: var(--app-dark-background); */
 }
 
+
+
+.App-header, .App-footer {
+  background-color: black;
+  color: white;
+}
+
+.App-dark-section, .App-dark-article {
+  background-image: var(--app-dark-background);
+  color: var(--light-shades);
+}
+
+.App-light-section, .App-light-article {
+  background-image: var(--app-light-background);
+  color: var(--dark-shades);
+}
+
+.App-nav {
+  background-image: var(--app-main-brand-background);
+  color: var(--light-shades);
+  border-radius: 0.5em;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 2px 2px var(--light-accent);
+}
+
+.App-header {
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.App-nav {
+  min-height: 10vh;
+  position: fixed;
+  top: 0;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+
+.App-dark-section, .App-light-section {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.App-dark-article, .App-light-article {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.App-footer {
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.App-link {
+  color: var(--light-accent);
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -22,21 +100,6 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  /* background-color: #282c34; */
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: var(--dark-shades);
-}
-
-.App-link {
-  color: var(--light-accent);
 }
 
 @keyframes App-logo-spin {
