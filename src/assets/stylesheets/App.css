@@ -6,19 +6,36 @@
   --dark-shades: rgb(51, 31, 49); /* Background color for inverted designs/Text color for dark on light designs  */
   --app-light-background: linear-gradient(45deg, rgb(245, 209, 131), rgba(245, 209, 131, 0.274));
   --app-dark-background: linear-gradient(45deg, rgb(51, 31, 49), rgba(51, 31, 49, 0.329));
-  --app-main-brand-background: linear-gradient(45deg, rgb(49, 97, 120), rgba(49, 98, 120, 0.671));
+  --app-main-brand-background: linear-gradient(45deg, rgb(49, 97, 120), rgba(49, 98, 120, 0.733));
 }
 
 .App {
   text-align: center;
-  /* background-image: var(--app-dark-background); */
+  background-image: var(--app-light-background); /* Use App-light-section colors for the default background */
+  color: var(--dark-shades);
 }
 
+.App-header {
+  -webkit-clip-path: polygon(0 0%, 100% 0%, 100% 90%, 0% 100%);
+  clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% calc(100% - 3.1vw));
+  margin-bottom: -3.1vw;
+}
 
+.App-footer {
+  -webkit-clip-path: polygon(0 0%, 100% 0%, 100% 90%, 0% 100%);
+  clip-path: polygon(0 30%, 100% 0%, 100% 100%, 0% calc(100% - 0vw));
+  margin-top: -3.1vw;
+}
 
 .App-header, .App-footer {
   background-color: black;
   color: white;
+  margin-bottom: -3.1vw;
+}
+
+.App-dark-section {
+  -webkit-clip-path: polygon(0 0%, 100% 0%, 100% 90%, 0% 100%);
+  clip-path: polygon(0 0%, 100% 10%, 100% 90%, 0% 100%);
 }
 
 .App-dark-section, .App-dark-article {
@@ -26,7 +43,7 @@
   color: var(--light-shades);
 }
 
-.App-light-section, .App-light-article {
+.App-light-article {
   background-image: var(--app-light-background);
   color: var(--dark-shades);
 }
@@ -34,9 +51,10 @@
 .App-nav {
   background-image: var(--app-main-brand-background);
   color: var(--light-shades);
-  border-radius: 0.5em;
-  box-sizing: border-box;
-  box-shadow: 2px 2px 2px 2px var(--light-accent);
+}
+
+.button {
+  color: blue;
 }
 
 .App-header {
@@ -49,19 +67,29 @@
 }
 
 .App-nav {
-  min-height: 10vh;
+  border-radius: 0.5em;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 2px 2px var(--light-accent);
+  min-height: 5vh;
   position: fixed;
   top: 0;
-  width: 80%;
+  width: 60%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-evenly;
+  font-size: calc(5px + 2vmin);
+}
+
+.App-dark-section {
+  min-height: 60vh;
+}
+
+.App-light-section {
+  min-height: 50vh;
 }
 
 .App-dark-section, .App-light-section {
-  min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -70,7 +98,7 @@
 }
 
 .App-dark-article, .App-light-article {
-  min-height: 50vh;
+  min-height: 30vh;
   display: flex;
   flex-direction: column;
   align-items: center;

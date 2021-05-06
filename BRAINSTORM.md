@@ -23,3 +23,5 @@ This file is the main location to write down and deliberate on what I want done,
 [ ]     f. Aside.js
 [ ]     g. Figure.js
 [x]     h. Footer.js
+
+## Step 2: 

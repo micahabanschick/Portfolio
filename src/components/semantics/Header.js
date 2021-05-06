@@ -1,11 +1,11 @@
-import Nav from './Nav'
+import NavBar from './NavBar'
 
 const Header = props => {
     return (
         <header className="App-header">
-        <Nav/>
+            <NavBar/>
             <p>
-                This is the base template for the header
+                Micah Banschick
             </p>
         </header>
     );
