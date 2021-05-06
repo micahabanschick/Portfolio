@@ -60,7 +60,6 @@
   font-size: calc(10px + 2vmin);
 }
 
-
 .App-dark-section, .App-light-section {
   min-height: 80vh;
   display: flex;
