@@ -1,5 +1,16 @@
+:root {
+  --main-brand-color: rgb(49, 97, 120);
+  --light-accent: rgb(64, 183, 194); /* Brings attention to an element */
+  --dark-accent: rgb(69, 128, 169); /* Brings attention to an element */
+  --light-shades: rgb(245, 209, 131); /* Background color for dark on light designs/Text color for inverted designs  */
+  --dark-shades: rgb(51, 31, 49); /* Background color for inverted designs/Text color for dark on light designs  */
+  --app-light-background: linear-gradient(45deg, rgb(245, 209, 131), rgba(245, 209, 131, 0.274));
+  --app-dark-background: linear-gradient(45deg, rgb(51, 31, 49), rgba(51, 31, 49, 0.329));
+}
+
 .App {
   text-align: center;
+  background-image: var(--app-light-background);
 }
 
 .App-logo {
@@ -14,18 +25,18 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--dark-shades);
 }
 
 .App-link {
-  color: #61dafb;
+  color: var(--light-accent);
 }
 
 @keyframes App-logo-spin {

@@ -12,7 +12,7 @@ This file is the main location to write down and deliberate on what I want done,
 
 [x] 3. Add a src/assets folder for stylesheets and media, and drop any css or media files inside
 
-[ ] 4. Add simple static styles in App.css
+[x] 4. Add simple static styles in App.css
 
 [ ] 5. Create initial semantic components and initial styles
 [ ]     a. Header.js
