@@ -7,11 +7,13 @@
   --app-light-background: linear-gradient(45deg, rgb(245, 209, 131), rgba(245, 209, 131, 0.274));
   --app-dark-background: linear-gradient(45deg, rgb(51, 31, 49), rgba(51, 31, 49, 0.329));
   --app-main-brand-background: linear-gradient(45deg, rgb(49, 97, 120), rgba(49, 98, 120, 0.733));
+  --profile-pic: url("../media/profile-pic.jpg");
 }
 
 .App {
   text-align: center;
   background-image: var(--app-light-background); /* Use App-light-section colors for the default background */
+  /* background-image: var(--profile-pic); */
   color: var(--dark-shades);
 }
 
@@ -33,6 +35,7 @@
 }
 
 .App-dark-section {
+  /* background-image: var(--profile-pic); */
   -webkit-clip-path: polygon(0 0%, 100% 0%, 100% 90%, 0% 100%);
   clip-path: polygon(0 0%, 100% 10%, 100% 90%, 0% 100%);
 }
@@ -40,6 +43,7 @@
 .App-dark-section, .App-dark-article {
   background-image: var(--app-dark-background);
   color: var(--light-shades);
+  /* border: none; */
 }
 
 .App-light-article {
