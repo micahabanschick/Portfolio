@@ -1,9 +1,9 @@
+import Contact from '../Contact'
+
 const Footer = props => {
     return (
         <footer className="App-footer">
-            <p>
-                This is the base template for the footer
-            </p>
+            <Contact/>
         </footer>
     );
 }

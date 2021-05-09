@@ -69,7 +69,7 @@
 }
 
 .App-header {
-  min-height: 30vh;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -118,7 +118,7 @@
 }
 
 .App-footer {
-  min-height: 20vh;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -132,6 +132,10 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.App-contact-form {
+  font-size: small;
 }
 
 @media (prefers-reduced-motion: no-preference) {
