@@ -17,8 +17,16 @@
   color: var(--dark-shades);
 }
 
+.App-header, .App-footer, .App-dark-section, .App-dark-article, .App-light-section, .App-light-article {
+  padding: 1em;
+}
+
+.App-details {
+  color: var(--dark-shades)
+}
+
 .App-header {
-  -webkit-clip-path: polygon(0 0%, 100% 0%, 100% 90%, 0% 100%);
+  -webkit-clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% calc(100% - 2.6em));
   clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% calc(100% - 2.6em));
   margin-bottom: -2.7em;
 }

@@ -98,9 +98,9 @@
 
 @media only screen and (min-width: 1024px) {
     .App-header {
-        -webkit-clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% calc(100% - 1.9em));
-        clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% calc(100% - 1.9em));
-        margin-bottom: -1.9em;
+        -webkit-clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% calc(100% - 2em));
+        clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% calc(100% - 2em));
+        margin-bottom: -2.05em;
     }
       
     .App-footer {

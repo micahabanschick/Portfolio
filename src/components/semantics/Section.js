@@ -1,4 +1,6 @@
 import Article from './Article'
+import NavBar from './NavBar'
+import Button from 'react-bootstrap/Button'
 
 const Section = props => {
 
@@ -14,10 +16,23 @@ const Section = props => {
 
     return (
         <section className={props.colorType}>
-            <Article colorType={articleColor()} />
+            <NavBar/>
+            <header>{props.title}</header>
+            <Article 
+                colorType={articleColor()} 
+
+                title={props.articleTitle}
+                description={props.articleDescription}
+            />
             <p>
                 This is the base template for the sections.
             </p>
+            <footer>
+                <p>
+                    This is the where I will list the various languages and frameworks.
+                </p>
+                <Button variant="primary" type="submit">Visit</Button>
+            </footer>
         </section>
     );
 }
