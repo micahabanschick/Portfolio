@@ -20,9 +20,9 @@ const Section = props => {
             <header>{props.title}</header>
             <Article 
                 colorType={articleColor()} 
-
-                title={props.articleTitle}
-                description={props.articleDescription}
+                title={props.title}
+                description={props.description}
+                github={props.github}
             />
             <p>
                 This is the base template for the sections.
@@ -31,7 +31,9 @@ const Section = props => {
                 <p>
                     This is the where I will list the various languages and frameworks.
                 </p>
-                <Button variant="primary" type="submit">Visit</Button>
+                <form action={props.visit} target="_blank">
+                    <Button variant="primary" src={props.visit} type="submit">Visit</Button>
+                </form>
             </footer>
         </section>
     );

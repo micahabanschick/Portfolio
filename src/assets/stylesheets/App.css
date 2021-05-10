@@ -64,9 +64,9 @@
   color: var(--light-shades);
 }
 
-.button {
+/* .button {
   color: blue;
-}
+} */
 
 .App-header {
   min-height: 70vh;
@@ -129,10 +129,25 @@
 .App-link {
   color: var(--light-accent);
 }
+
+.btn-primary {
+  background-image: var(--app-main-brand-background);
+  color: var(--light-shades)
+}
+
+.btn-secondary {
+  /* background-color: var(--dark-accent); */
+  color: var(--light-accent)
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
+
+/* .App-description {
+  color: var(--light-shades);
+} */
 
 .App-contact-form {
   font-size: small;
