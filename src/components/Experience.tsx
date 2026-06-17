@@ -4,7 +4,7 @@ import { experience } from "@/data/content";
 
 export default function Experience() {
   return (
-    <Section id="experience" eyebrow="Career" title="Experience">
+    <Section id="experience" eyebrow="Where I've worked" title="Research & Experience">
       <div className="relative">
         {/* Timeline spine */}
         <div className="absolute left-0 top-2 bottom-2 hidden w-px bg-gradient-to-b from-[var(--color-violet)] via-[var(--color-fuchsia)] to-transparent sm:block" />

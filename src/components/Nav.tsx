@@ -4,9 +4,11 @@ import { useEffect, useState } from "react";
 
 const links = [
   { href: "#about", label: "About" },
-  { href: "#experience", label: "Experience" },
+  { href: "#education", label: "Education" },
+  { href: "#experience", label: "Research" },
+  { href: "#publications", label: "Publications" },
   { href: "#skills", label: "Skills" },
-  { href: "#projects", label: "Projects" },
+  { href: "#honors", label: "Honors" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -37,7 +39,7 @@ export default function Nav() {
           MB<span className="text-gradient">.</span>
         </a>
 
-        <ul className="hidden items-center gap-8 md:flex">
+        <ul className="hidden items-center gap-6 lg:flex">
           {links.map((l) => (
             <li key={l.href}>
               <a
@@ -52,14 +54,14 @@ export default function Nav() {
 
         <a
           href="#contact"
-          className="hidden rounded-full bg-gradient-to-r from-[var(--color-violet)] to-[var(--color-fuchsia)] px-5 py-2 text-sm font-semibold text-white transition-transform hover:scale-105 md:inline-block"
+          className="hidden rounded-full bg-gradient-to-r from-[var(--color-violet)] to-[var(--color-fuchsia)] px-5 py-2 text-sm font-semibold text-white transition-transform hover:scale-105 lg:inline-block"
         >
           Get in touch
         </a>
 
         <button
           aria-label="Toggle menu"
-          className="md:hidden"
+          className="lg:hidden"
           onClick={() => setOpen((o) => !o)}
         >
           <div className="space-y-1.5">
@@ -71,7 +73,7 @@ export default function Nav() {
       </nav>
 
       {open && (
-        <div className="glass mx-4 mt-2 rounded-2xl p-4 md:hidden">
+        <div className="glass mx-4 mt-2 rounded-2xl p-4 lg:hidden">
           <ul className="flex flex-col gap-3">
             {links.map((l) => (
               <li key={l.href}>

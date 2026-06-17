@@ -81,8 +81,8 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.25 }}
               className="mt-6 flex items-center gap-2 text-lg text-[var(--color-muted)]"
             >
-              <span>I write code that is</span>
-              <span className="relative inline-block min-w-[5.5rem] font-[family-name:var(--font-display)] font-semibold text-[var(--color-text)]">
+              <span>I turn hard problems into</span>
+              <span className="relative inline-block min-w-[7.5rem] font-[family-name:var(--font-display)] font-semibold text-[var(--color-text)]">
                 <motion.span
                   key={wordIndex}
                   initial={{ y: 14, opacity: 0 }}
@@ -113,10 +113,10 @@ export default function Hero() {
             className="mt-9 flex flex-wrap items-center gap-4"
           >
             <a
-              href="#projects"
+              href="#experience"
               className="rounded-full bg-gradient-to-r from-[var(--color-violet)] to-[var(--color-fuchsia)] px-7 py-3 font-semibold text-white shadow-lg shadow-fuchsia-500/20 transition-transform hover:scale-105"
             >
-              View my work
+              View my research
             </a>
             <a
               href={`mailto:${contact.email}`}

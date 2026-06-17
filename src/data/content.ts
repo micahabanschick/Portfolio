@@ -2,168 +2,284 @@
  * ─────────────────────────────────────────────────────────────────────────
  *  SINGLE SOURCE OF TRUTH FOR ALL SITE CONTENT
  * ─────────────────────────────────────────────────────────────────────────
- *  Edit this file to update the entire site. Everything below marked
- *  `// TODO:` is a placeholder waiting for your real content.
- *
- *  Nothing here is hard to change — replace the strings, add/remove array
- *  items, and the site updates automatically.
+ *  Edit this file to update the entire site. Drop assets (résumé PDF,
+ *  project images, headshot) into /public.
  * ─────────────────────────────────────────────────────────────────────────
  */
 
 export const site = {
-  // Used for SEO, browser tab title, and the social-share preview card.
   domain: "https://portfolio.banschick.com",
-  title: "Micah Banschick — Software Engineer",
+  title: "Micah Banschick — Computational Physicist & Aerospace Researcher",
   description:
-    "Software engineer building thoughtful, well-crafted web applications. Explore my portfolio, experience, and projects.",
+    "Physics & math researcher applying simulation, data, and code to plasma propulsion, astrophysics, and deep-tech R&D. Incoming Aerospace Engineering PhD student at UCF.",
 };
 
 export const hero = {
   name: "Micah Banschick",
-  // Short, punchy role line under the name.
-  title: "Software Engineer",
-  // One or two sentences. This is the first thing recruiters read.
+  title: "Computational Physicist · Aerospace Researcher",
   tagline:
-    "I build thoughtful, well-crafted web applications — from polished React frontends to powerful APIs.",
-  // Optional rotating words for the animated headline (bold/creative accent).
-  rotatingWords: ["clean", "fast", "scalable", "human"],
-  location: "TODO: City, Country", // e.g. "New York, NY"
-  availability: "Open to new opportunities", // or "" to hide the badge
+    "I turn hard problems into simulations, models, and insight — across plasma propulsion, astrophysics, and deep-tech R&D.",
+  // Rotating words after "I turn hard problems into …"
+  rotatingWords: ["simulations", "models", "insight", "results"],
+  location: "Stamford, CT",
+  // Shown as a status pill in the hero.
+  availability: "Incoming Aerospace Engineering PhD · UCF Hyperspace Center",
   photo: "/profile.jpg",
 };
 
 export const about = {
   heading: "About",
-  // 2–4 sentences. Professional bio in your own voice.
   body: [
-    "I started my career in software engineering in early 2020 and have pursued it ever since as both a craft and a passion.",
-    "TODO: Add a paragraph about your focus, strengths, and what kind of work you're looking for. What do you care about as an engineer? What are you great at?",
+    "I'm a physics and mathematics researcher who turns hard problems into simulations, models, and insight. My work spans plasma-propulsion research at the Air Force Research Laboratory, stochastic modeling of binary supermassive black holes, and production software engineering.",
+    "This fall I'm beginning my PhD in Aerospace Engineering at the University of Central Florida, joining the Hyperspace Center to advance plasma propulsion and deep-tech R&D. I hold an active DoD Secret clearance and am driven to apply simulation, data, and code toward fielding advanced physics.",
   ],
-  // Quick-glance stats (optional — set to [] to hide).
   stats: [
-    { label: "Years building", value: "TODO" },
-    { label: "Projects shipped", value: "6+" },
-    { label: "Core stack", value: "React · Node" },
+    { label: "GPA — Physics & Math", value: "3.63" },
+    { label: "DoD Clearance (active)", value: "Secret" },
+    { label: "Manuscripts in prep", value: "3" },
   ],
 };
+
+export type EducationItem = {
+  school: string;
+  degree: string;
+  period: string;
+  location?: string;
+  details?: string[];
+  status?: string; // e.g. "Incoming Fall 2026"
+};
+
+export const education: EducationItem[] = [
+  {
+    school: "University of Central Florida",
+    degree: "Ph.D. in Aerospace Engineering",
+    period: "2026 — Present",
+    location: "Orlando, FL",
+    status: "Incoming · Fall 2026",
+    details: [
+      "Joining the Hyperspace Center to advance plasma propulsion and deep-tech R&D.",
+    ],
+  },
+  {
+    school: "University of Connecticut",
+    degree: "B.Sc. in Physics & Mathematics — University Scholar with Honors",
+    period: "2022 — 2026",
+    location: "Storrs, CT",
+    status: "Expected Aug 2026 · GPA 3.63",
+    details: [
+      "Thesis: Stochastic Methods for Identifying Binary Supermassive Black Holes.",
+      "Coursework: Graduate Numerical Analysis, PDEs, Stochastic Processes, Statistical & Thermal Physics, E&M I–II, Analysis I, Abstract Linear Algebra, Complex Variables, Data Structures & Object-Oriented Design.",
+    ],
+  },
+];
 
 export type Experience = {
   company: string;
   role: string;
-  start: string; // "Jan 2022"
-  end: string; // "Present"
+  start: string;
+  end: string;
   location?: string;
   summary?: string;
-  highlights: string[]; // achievement bullets
+  highlights: string[];
   tech?: string[];
 };
 
-// TODO: Replace with your real work history (most recent first).
 export const experience: Experience[] = [
   {
-    company: "TODO: Company Name",
-    role: "TODO: Your Title",
-    start: "Mon YYYY",
+    company: "University of Connecticut",
+    role: "Undergraduate Mathematical Physics Researcher — Stochastic Astrophysics",
+    start: "Dec 2023",
     end: "Present",
-    location: "TODO: Location / Remote",
-    summary: "TODO: One line on the company or your role.",
+    location: "Storrs, CT",
+    summary:
+      "Advisory committee: Jonathan Trump, Lea Ferreira dos Santos, Cara Battersby.",
     highlights: [
-      "TODO: A specific, measurable achievement (e.g. 'Cut page load time 40% by …').",
-      "TODO: Another accomplishment, ideally with impact or numbers.",
-      "TODO: A technical contribution you're proud of.",
+      "Construct MCMC variability models of 950 binary supermassive black hole light curves in Python for parameter inference, feeding the model over 20 GB of black-hole data.",
+      "Programmed a publication-supported algorithm to calculate the spectral emission distributions of binary supermassive black holes by integrating radially through their mini-disks.",
     ],
-    tech: ["React", "TypeScript", "Node.js"],
+    tech: ["Python", "NumPy", "SciPy", "AstroPy", "emcee", "Celerite2", "AstroML"],
   },
   {
-    company: "TODO: Earlier Company",
-    role: "TODO: Your Title",
-    start: "Mon YYYY",
-    end: "Mon YYYY",
-    location: "TODO: Location",
+    company: "Air Force Research Laboratory",
+    role: "Space Chemistry Research Intern — Electrospray Propulsion",
+    start: "Jun 2025",
+    end: "Aug 2025",
+    location: "Advisor: Benjamin Prince",
     highlights: [
-      "TODO: Accomplishment.",
-      "TODO: Accomplishment.",
+      "Executed design-space sweeps informing next-gen emitter-array geometry for higher thrust-to-power efficiency.",
+      "Simulated charged-particle trajectories in capillary electrospray plumes using LAMMPS.",
+      "Processed beam-probe data in IgorPro and visualized plume evolution in VMD to cross-validate simulation predictions.",
     ],
-    tech: ["JavaScript", "Ruby on Rails"],
+    tech: ["LAMMPS", "IgorPro", "VMD", "Python"],
+  },
+  {
+    company: "Air Force Research Laboratory",
+    role: "Space Chemistry Research Intern — Optical Signatures",
+    start: "May 2024",
+    end: "Aug 2024",
+    location: "Advisor: Benjamin Prince",
+    highlights: [
+      "Drove experiments gathering optical emissions of N₂⁺ + N₂ collisions at 16–600 eV/q with a 13.86 MHz RF ion source, aiding atmospheric radiative models.",
+      "Generated vibrational & rotational basis functions with DIATOMIC and simulated spectra in IgorPro, extracting state-resolved cross-sections.",
+      "Leveraged Monte-Carlo cascade simulations and statistical analysis to validate measurements and produce NIH-validated N₂⁺ spectra for upper-atmosphere radiative-transport models.",
+    ],
+    tech: ["IgorPro", "DIATOMIC", "Monte-Carlo", "Statistical Analysis"],
+  },
+  {
+    company: "Synchrony Financial",
+    role: "Java API Engineer",
+    start: "May 2023",
+    end: "Nov 2023",
+    location: "Agile / bi-weekly sprints",
+    highlights: [
+      "Built a Spring Boot microservice for sending customer alerts on behalf of high-profile clients.",
+      "Developed and debugged Java API services that enhanced operational workflows.",
+      "Delivered consistently across bi-weekly Agile sprints, strengthening team efficiency and timelines.",
+    ],
+    tech: ["Java", "Spring Boot", "IntelliJ IDEA", "Agile"],
+  },
+];
+
+export type Publication = {
+  authors: string;
+  title: string;
+  venue: string;
+  year: string;
+};
+
+export const publications: Publication[] = [
+  {
+    authors: "Banschick, M.",
+    title: "Stochastic Methods for Identifying Binary Supermassive Black Holes",
+    venue: "In prep. — target IEEE Transactions on Plasma Science (Apr 2026)",
+    year: "2025",
+  },
+  {
+    authors: "Prince, B., Banschick, M.",
+    title:
+      "Capillary Electrospray Plume Dynamics at nL/s Flow Rates: Experiments and Simulations",
+    venue: "In prep. — target JANNAF Exhaust Plume & Signatures (Jan 2026)",
+    year: "2025",
+  },
+  {
+    authors: "Hause, M., Prince, B., Banschick, M.",
+    title: "Luminescence Measurements of Charge-Transfer Collisions of N₂⁺ + N₂",
+    venue: "In prep. — planned submission Oct 2025",
+    year: "2024",
+  },
+];
+
+export type Talk = {
+  title: string;
+  venue: string;
+  kind: string; // "Seminar" | "Poster"
+  year: string;
+};
+
+export const talks: Talk[] = [
+  {
+    title: "Ion–Neutral Collision Imaging in Low-Pressure Ion Beams",
+    venue: "Dept. of Physics, University of Connecticut",
+    kind: "Seminar",
+    year: "2025",
+  },
+  {
+    title: "Modeling and Simulation of Capillary Electrospray Thruster Plumes",
+    venue: "Air Force Research Laboratory",
+    kind: "Poster",
+    year: "2025",
+  },
+  {
+    title: "Luminescence Measurements of Charge-Transfer Collisions of N₂⁺ + N₂",
+    venue: "Air Force Research Laboratory",
+    kind: "Poster",
+    year: "2024",
   },
 ];
 
 export type SkillGroup = { category: string; items: string[] };
 
-// TODO: Tune these to match your real skill set.
 export const skills: SkillGroup[] = [
-  { category: "Languages", items: ["JavaScript", "TypeScript", "Ruby", "HTML", "CSS"] },
-  { category: "Frameworks", items: ["React", "Next.js", "Redux", "Ruby on Rails", "Bootstrap"] },
-  { category: "Tools & Platforms", items: ["Git", "GitHub", "AWS", "Cloudflare", "Caddy", "Node.js"] },
+  {
+    category: "Simulation & Analysis",
+    items: [
+      "Monte-Carlo & MCMC",
+      "Plasma Plume Modeling",
+      "Spectroscopic Fitting",
+      "Statistical Inference",
+    ],
+  },
+  {
+    category: "Programming",
+    items: [
+      "Python (NumPy, SciPy, AstroPy, Matplotlib, emcee)",
+      "MATLAB",
+      "Mathematica",
+      "Java",
+      "Git",
+    ],
+  },
+  {
+    category: "Scientific & ML Software",
+    items: [
+      "LAMMPS",
+      "IgorPro",
+      "VMD",
+      "DIATOMIC",
+      "QuantConnect",
+      "PyTorch",
+      "stable-baselines3",
+    ],
+  },
 ];
 
-export type Project = {
-  title: string;
-  description: string;
-  tech: string[];
-  github?: string;
-  live?: string;
-  image?: string; // path under /public, e.g. "/projects/incontact.png"
-  featured?: boolean;
+export type Honor = { title: string; org: string; period: string };
+
+export const honors: Honor[] = [
+  { title: "Secret-Level Security Clearance (DoD, active)", org: "USRA", period: "2025 — Present" },
+  { title: "University Scholar", org: "University of Connecticut", period: "2025 — Present" },
+  { title: "Honors Scholar in Physics", org: "University of Connecticut", period: "2023 — Present" },
+  { title: "Annual Physics & Mathematics Award", org: "University of Connecticut", period: "2023" },
+];
+
+export type LeadershipRole = {
+  role: string;
+  org: string;
+  period: string;
+  highlights: string[];
 };
 
-// Carried over from your existing site — edit freely, add screenshots via `image`.
-export const projects: Project[] = [
+export const leadership: LeadershipRole[] = [
   {
-    title: "InContact",
-    description:
-      "An easy-to-use portfolio generator that lets entrepreneurs market themselves fully. Built on a React–Redux frontend backed by a powerful Rails API.",
-    tech: ["React", "Redux", "Ruby on Rails"],
-    github: "https://github.com/micahabanschick/InContact",
-    featured: true,
+    role: "Quantitative Researcher",
+    org: "Husky Quantitative Group (student-run hedge fund)",
+    period: "Apr 2025 — Present",
+    highlights: [
+      "Implement Policy-Gradient reinforcement-learning algorithms into the HQG trading model.",
+      "Backtest experimental strategies in QuantConnect using PyTorch and stable-baselines3 (PPO).",
+      "Present strategy memos to the UConn Dean of Business and external investors to secure funding.",
+    ],
   },
   {
-    title: "AweSum",
-    description:
-      "An educational application that runs a friendly mathematics quiz for young learners.",
-    tech: ["JavaScript", "HTML", "CSS"],
-    github: "https://github.com/micahabanschick/AweSum/",
-    live: "https://micahabanschick.github.io/AweSum/",
-  },
-  {
-    title: "Love Life",
-    description:
-      "A single-page app that tracks monthly expenses from user-selected bill options, powered by a Rails API with a smooth JavaScript frontend.",
-    tech: ["JavaScript", "Ruby on Rails", "SPA"],
-    github: "https://github.com/micahabanschick/Love_Life/",
-  },
-  {
-    title: "Carb Container",
-    description:
-      "An open-source tool to store, record, and calculate daily diet-macro intake, with personal accounts and a daily reset flow.",
-    tech: ["JavaScript", "Ruby on Rails"],
-    github: "https://github.com/micahabanschick/Carb_Container/",
-  },
-  {
-    title: "Acoustic Karma",
-    description:
-      "An open-source tool to store, market, and archive your music — with a Song tool for track data and a Post tool for writing about new releases.",
-    tech: ["JavaScript", "Ruby on Rails"],
-    github: "https://github.com/micahabanschick/Acoustic_Karma/",
-  },
-  {
-    title: "Anilector",
-    description:
-      "A CLI application that recommends the most fitting anime to start your Otaku journey — list three genres and it sorts out the rest.",
-    tech: ["Ruby", "CLI"],
-    github: "https://github.com/micahabanschick/Anilector/",
+    role: "Co-Lead",
+    org: "Science, Technology & Astronomy Recruits (STARs)",
+    period: "2023 — 2025",
+    highlights: [
+      "Mentored ~40 STEM undergraduates per semester on majors, research, and graduate applications.",
+      "Designed and delivered physics demos to ~60 high-school students per year; managed ~$2K in materials and safety kits.",
+      "Led interactive lessons on optics, electrostatics, projectile motion, and gravity.",
+    ],
   },
 ];
 
 export const contact = {
-  heading: "Let's work together",
+  heading: "Let's build advanced physics",
   blurb:
-    "I'm currently open to new opportunities. The fastest way to reach me is by email.",
+    "I'm open to research collaborations and R&D opportunities in defense and deep-tech. The fastest way to reach me is by email.",
   email: "micha.ban@gmail.com",
-  // TODO: confirm / add your real profile URLs.
   socials: [
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/micah-banschick/" },
     { label: "GitHub", href: "https://github.com/micahabanschick" },
-    { label: "LinkedIn", href: "TODO: https://www.linkedin.com/in/your-handle" },
   ],
   // Drop a PDF at /public/resume.pdf to enable the download button.
   resume: "/resume.pdf",
