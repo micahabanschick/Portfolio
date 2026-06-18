@@ -31,3 +31,15 @@ next-env.d.ts
 # editor
 .vscode/
 .idea/
+
+# Legacy CRA/Amplify artifacts that OneDrive occasionally restores.
+# (Keep them out of git; they also shadow the .tsx sources if present on disk.)
+/amplify/
+/BRAINSTORM.md
+/aws-exports.js
+/public/index.html
+/public/manifest.json
+/public/robots.txt
+/public/logo*.png
+/src/**/*.js
+/src/**/*.jsx
