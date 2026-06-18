@@ -24,19 +24,26 @@ export default function Hero() {
       id="top"
       className="relative flex min-h-screen items-center overflow-hidden px-6 pt-28 pb-16"
     >
-      {/* Background glows */}
+      {/* Background nebula glows (dialed up) */}
       <div
-        className="glow"
-        style={{ width: 520, height: 520, background: "var(--color-violet)", top: -120, left: -80 }}
+        className="glow-strong"
+        style={{ width: 620, height: 620, background: "var(--color-violet)", top: -160, left: -120 }}
       />
       <div
-        className="glow"
-        style={{ width: 460, height: 460, background: "var(--color-fuchsia)", bottom: -140, right: -60 }}
+        className="glow-strong"
+        style={{ width: 540, height: 540, background: "var(--color-fuchsia)", bottom: -180, right: -80 }}
       />
       <div
-        className="glow"
-        style={{ width: 380, height: 380, background: "var(--color-cyan)", top: "40%", right: "30%", opacity: 0.25 }}
+        className="glow-strong"
+        style={{ width: 460, height: 460, background: "var(--color-cyan)", top: "35%", right: "28%", opacity: 0.3 }}
       />
+      <div
+        className="glow-strong"
+        style={{ width: 420, height: 420, background: "#2563eb", top: "55%", left: "8%", opacity: 0.28 }}
+      />
+
+      {/* Aero horizon grid at the base of the hero */}
+      <div className="aero-grid pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[45%]" />
 
       <div className="relative z-10 mx-auto grid w-full max-w-6xl items-center gap-12 md:grid-cols-[1.4fr_1fr]">
         {/* Left: text */}
@@ -162,8 +169,17 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="relative mx-auto w-full max-w-xs"
         >
-          <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-[var(--color-violet)] via-[var(--color-fuchsia)] to-[var(--color-cyan)] opacity-60 blur-xl" />
-          <div className="relative overflow-hidden rounded-[2rem] border border-white/10">
+          {/* Orbital rings */}
+          <div className="orbit orbit-spin hidden sm:block" style={{ width: 360, height: 360, border: "1px dashed rgba(168,85,247,0.30)" }}>
+            <span className="orbit-node" />
+          </div>
+          <div className="orbit orbit-spin-rev hidden sm:block" style={{ width: 450, height: 450, border: "1px dashed rgba(34,211,238,0.22)" }}>
+            <span className="orbit-node" style={{ background: "var(--color-fuchsia)", boxShadow: "0 0 12px 2px var(--color-fuchsia)" }} />
+          </div>
+          <div className="orbit hidden sm:block" style={{ width: 540, height: 540, border: "1px solid rgba(255,255,255,0.05)" }} />
+
+          <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-[var(--color-violet)] via-[var(--color-fuchsia)] to-[var(--color-cyan)] opacity-70 blur-xl" />
+          <div className="relative z-10 overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl shadow-fuchsia-500/20">
             <Image
               src={hero.photo}
               alt={hero.name}

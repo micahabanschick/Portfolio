@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const links = [
@@ -35,8 +36,15 @@ export default function Nav() {
         }`}
         style={{ marginLeft: "1rem", marginRight: "1rem" }}
       >
-        <a href="#top" className="font-[family-name:var(--font-display)] text-lg font-bold tracking-tight">
-          MB<span className="text-gradient">.</span>
+        <a href="#top" aria-label="Home" className="group flex items-center">
+          <Image
+            src="/emblem.png"
+            alt="Micah Banschick emblem"
+            width={44}
+            height={39}
+            priority
+            className="h-9 w-auto drop-shadow-[0_0_10px_rgba(168,85,247,0.45)] transition-transform duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_16px_rgba(217,70,239,0.7)]"
+          />
         </a>
 
         <ul className="hidden items-center gap-6 lg:flex">

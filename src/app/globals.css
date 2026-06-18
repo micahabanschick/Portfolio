@@ -173,6 +173,96 @@ body {
   color: var(--color-fuchsia);
 }
 
+/* ─────────────────────────────────────────────────────────────
+   SPACE / ASTRO / AERO LAYER
+   ───────────────────────────────────────────────────────────── */
+
+/* Deep-space nebula wash sitting behind the starfield (z:1) */
+.cosmos {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(58% 48% at 12% -5%, rgba(91, 33, 182, 0.34), transparent 72%),
+    radial-gradient(52% 46% at 92% 8%, rgba(8, 145, 178, 0.24), transparent 72%),
+    radial-gradient(60% 55% at 82% 102%, rgba(217, 70, 239, 0.2), transparent 72%),
+    radial-gradient(46% 42% at -5% 92%, rgba(37, 99, 235, 0.22), transparent 72%);
+  animation: nebula-breathe 24s ease-in-out infinite alternate;
+}
+
+@keyframes nebula-breathe {
+  0% {
+    opacity: 0.75;
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.08) translateY(-1.5%);
+  }
+}
+
+/* Orbital rings (used around the hero portrait) */
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 9999px;
+  translate: -50% -50%;
+  pointer-events: none;
+}
+.orbit-spin {
+  animation: orbit-spin 38s linear infinite;
+}
+.orbit-spin-rev {
+  animation: orbit-spin 60s linear infinite reverse;
+}
+@keyframes orbit-spin {
+  to {
+    rotate: 360deg;
+  }
+}
+
+/* A small "planet"/node that rides an orbit ring */
+.orbit-node {
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  translate: -50% 0;
+  background: var(--color-cyan);
+  box-shadow: 0 0 12px 2px var(--color-cyan);
+}
+
+/* Aero perspective grid — a fading "horizon" used at section edges */
+.aero-grid {
+  background-image: linear-gradient(
+      to right,
+      rgba(34, 211, 238, 0.16) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(34, 211, 238, 0.16) 1px, transparent 1px);
+  background-size: 44px 44px;
+  -webkit-mask-image: radial-gradient(
+    120% 100% at 50% 100%,
+    black,
+    transparent 72%
+  );
+  mask-image: radial-gradient(120% 100% at 50% 100%, black, transparent 72%);
+}
+
+/* Brighter, more saturated glow variant for the dialed-up look */
+.glow-strong {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px) saturate(140%);
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   ::before,

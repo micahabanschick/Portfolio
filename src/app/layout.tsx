@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter } from "next/font/google";
 import { site } from "@/data/content";
+import Starfield from "@/components/Starfield";
 import "./globals.css";
 
 const display = Space_Grotesk({
@@ -50,7 +51,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${display.variable} ${sans.variable}`}>
-      <body className="grain">{children}</body>
+      <body className="grain">
+        <div className="cosmos" aria-hidden="true" />
+        <Starfield />
+        {children}
+      </body>
     </html>
   );
 }
