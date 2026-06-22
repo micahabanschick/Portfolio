@@ -16,7 +16,7 @@ export const site = {
 
 export const hero = {
   name: "Micah Banschick",
-  title: "Computational Physicist · Aerospace Researcher",
+  title: "Computational Physicist · Aerospace Researcher · Financial Mathematician",
   tagline:
     "I turn hard problems into simulations, models, and insight — across plasma propulsion, astrophysics, and quantitative finance.",
   // Rotating words after "I turn hard problems into …"
