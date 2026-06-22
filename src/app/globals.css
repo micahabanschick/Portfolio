@@ -263,6 +263,55 @@ body {
   z-index: 0;
 }
 
+/* ─────────────────────────────────────────────────────────────
+   MARK'S THEME — warm / editorial / authoritative
+   ───────────────────────────────────────────────────────────── */
+.mark-theme {
+  --mk-cream: #f7f3ec;
+  --mk-paper: #fffdf9;
+  --mk-ink: #211c16;
+  --mk-muted: #6f6557;
+  --mk-line: #e6ddcf;
+  --mk-accent: #0f766e; /* deep teal */
+  --mk-accent-2: #b4541e; /* warm terracotta */
+  background-color: var(--mk-cream);
+  color: var(--mk-ink);
+  font-family: var(--font-sans);
+}
+
+.mark-serif {
+  font-family: var(--font-serif), Georgia, serif;
+}
+
+.mark-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--mk-accent);
+}
+
+/* Paper card with a soft warm shadow */
+.mark-card {
+  background: var(--mk-paper);
+  border: 1px solid var(--mk-line);
+  border-radius: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.mark-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px -24px rgba(33, 28, 22, 0.45);
+}
+
+/* Thin rule used under section headings */
+.mark-rule {
+  height: 2px;
+  width: 56px;
+  background: linear-gradient(90deg, var(--mk-accent), var(--mk-accent-2));
+  border-radius: 99px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   ::before,

@@ -28,12 +28,13 @@ export const family: FamilyMember[] = [
   },
   {
     slug: "mark",
-    name: "Mark Banschick",
-    role: "Coming soon",
-    blurb: "Professional portfolio — in progress.",
+    name: "Mark Banschick, MD",
+    role: "Psychiatrist · Author",
+    blurb:
+      "Child, adolescent & adult psychiatry, and the author of The Intelligent Divorce.",
     href: "/mark",
-    available: false,
-    accentFrom: "#0ea5e9",
-    accentTo: "#14b8a6",
+    available: true,
+    accentFrom: "#0f766e",
+    accentTo: "#b4541e",
   },
 ];

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter } from "next/font/google";
+import { Space_Grotesk, Inter, Fraunces } from "next/font/google";
 import { site } from "@/data/content";
 import "./globals.css";
 
@@ -12,6 +12,13 @@ const display = Space_Grotesk({
 const sans = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
+  display: "swap",
+});
+
+// Editorial serif — used by Mark's (warm) theme.
+const serif = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-serif",
   display: "swap",
 });
 
@@ -29,7 +36,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${display.variable} ${sans.variable}`}>
+    <html
+      lang="en"
+      className={`${display.variable} ${sans.variable} ${serif.variable}`}
+    >
       <body>{children}</body>
     </html>
   );
