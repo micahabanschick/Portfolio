@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter } from "next/font/google";
 import { site } from "@/data/content";
-import Starfield from "@/components/Starfield";
 import "./globals.css";
 
 const display = Space_Grotesk({
@@ -16,31 +15,11 @@ const sans = Inter({
   display: "swap",
 });
 
+// Root metadata applies to the family hub; each member's page overrides it.
 export const metadata: Metadata = {
   metadataBase: new URL(site.domain),
-  title: site.title,
-  description: site.description,
-  keywords: [
-    "Micah Banschick",
-    "Software Engineer",
-    "Web Developer",
-    "React",
-    "Next.js",
-    "Portfolio",
-  ],
-  authors: [{ name: "Micah Banschick" }],
-  openGraph: {
-    type: "website",
-    url: site.domain,
-    title: site.title,
-    description: site.description,
-    siteName: "Micah Banschick",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: site.title,
-    description: site.description,
-  },
+  title: "The Banschick Family",
+  description: "Portfolios of the Banschick family.",
   robots: { index: true, follow: true },
 };
 
@@ -51,11 +30,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${display.variable} ${sans.variable}`}>
-      <body className="grain">
-        <div className="cosmos" aria-hidden="true" />
-        <Starfield />
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

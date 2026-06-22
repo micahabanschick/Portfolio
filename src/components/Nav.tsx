@@ -37,7 +37,7 @@ export default function Nav() {
         }`}
         style={{ marginLeft: "1rem", marginRight: "1rem" }}
       >
-        <a href="#top" aria-label="Home" className="group flex items-center">
+        <a href="/" aria-label="Family home" className="group flex items-center">
           <Image
             src="/emblem.png"
             alt="Micah Banschick emblem"
