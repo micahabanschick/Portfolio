@@ -18,7 +18,7 @@ export const hero = {
   name: "Micah Banschick",
   title: "Computational Physicist · Aerospace Researcher · Financial Mathematician",
   tagline:
-    "I turn hard problems into simulations, models, and insight — across plasma propulsion, astrophysics, and quantitative finance.",
+    "I turn hard problems into reliably effective and reproducible solutions — across plasma propulsion, astrophysics, and quantitative finance.",
   // Rotating words after "I turn hard problems into …"
   rotatingWords: ["simulations", "models", "insight", "results"],
   location: "Stamford, CT",
@@ -280,7 +280,8 @@ export const skills: SkillGroup[] = [
 export type Honor = { title: string; org: string; period: string };
 
 export const honors: Honor[] = [
-  { title: "Secret-Level Security Clearance (DoD, active)", org: "USRA", period: "2025 — Present" },
+  { title: "Pi Mu Epsilon Honoree", org: "University of Connecticut", period: "2026 — Present" },
+  { title: "Secret-Level Security Clearance (DoD, active)", org: "USRA", period: "2026 — Present" },
   { title: "University Scholar", org: "University of Connecticut", period: "2025 — Present" },
   { title: "Honors Scholar in Physics", org: "University of Connecticut", period: "2023 — Present" },
   { title: "Annual Physics & Mathematics Award", org: "University of Connecticut", period: "2023" },
@@ -317,9 +318,9 @@ export const leadership: LeadershipRole[] = [
 ];
 
 export const contact = {
-  heading: "Let's build advanced physics",
+  heading: "Let's build our future together",
   blurb:
-    "I'm open to research collaborations and R&D opportunities in defense and deep-tech. The fastest way to reach me is by email.",
+    "I'm open to research collaborations and R&D opportunities in defense, deep-tech, and quantitative finance. The fastest way to reach me is by email.",
   email: "micha.ban@gmail.com",
   socials: [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/micah-banschick/" },
