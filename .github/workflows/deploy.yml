@@ -1,0 +1,58 @@
+name: Deploy portfolio
+
+# Builds the static export and deploys it to the Caddy server on every push
+# to the live branch. Secrets (DEPLOY_SSH_KEY/HOST/USER/PATH) are configured
+# in the repo settings; nothing sensitive lives in this file.
+
+on:
+  push:
+    branches: [redesign]
+    paths-ignore:
+      - "**.md"
+      - ".gitignore"
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-portfolio
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build static export
+        run: npm run build
+
+      - name: Deploy to server (rsync over SSH)
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+          DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/id_deploy
+          chmod 600 ~/.ssh/id_deploy
+          ssh-keyscan -H "$DEPLOY_HOST" >> ~/.ssh/known_hosts 2>/dev/null
+          # In-place sync (no rm -rf): keeps the Caddy bind-mount inode intact.
+          rsync -az --delete \
+            -e "ssh -i ~/.ssh/id_deploy -o StrictHostKeyChecking=yes" \
+            out/ "$DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH"
+
+      - name: Verify live site
+        run: |
+          sleep 3
+          code=$(curl -sS --max-time 30 -o /dev/null -w "%{http_code}" "https://portfolio.banschick.com/?v=${GITHUB_SHA}")
+          echo "https://portfolio.banschick.com -> HTTP $code"
+          test "$code" = "200"
