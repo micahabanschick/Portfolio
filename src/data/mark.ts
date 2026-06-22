@@ -22,6 +22,7 @@ export const markHero = {
   location: "Stamford, CT · Katonah, NY",
   years: "40+ years in practice",
   monogram: "MB",
+  photo: "/mark.jpg",
 };
 
 export const markAbout = {

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "motion/react";
 import { MapPin, Clock } from "lucide-react";
 import { markHero, markContact } from "@/data/mark";
@@ -93,21 +94,27 @@ export default function MarkHero() {
           </motion.div>
         </div>
 
-        {/* Monogram seal (typographic — no photo needed for the draft) */}
+        {/* Framed portrait */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="mx-auto hidden md:block"
+          className="relative mx-auto w-full max-w-[260px]"
         >
-          <div className="relative flex h-60 w-60 items-center justify-center rounded-full border border-[var(--mk-line)] bg-[var(--mk-paper)] shadow-[0_30px_60px_-30px_rgba(33,28,22,0.4)]">
-            <div
-              className="absolute inset-3 rounded-full border"
-              style={{ borderColor: "var(--mk-accent)", opacity: 0.25 }}
+          {/* offset accent frame */}
+          <div
+            className="absolute -bottom-3 -right-3 h-full w-full rounded-2xl"
+            style={{ border: "2px solid var(--mk-accent)", opacity: 0.4 }}
+          />
+          <div className="relative overflow-hidden rounded-2xl border border-[var(--mk-line)] bg-[var(--mk-paper)] shadow-[0_30px_60px_-30px_rgba(33,28,22,0.45)]">
+            <Image
+              src={markHero.photo}
+              alt={markHero.name}
+              width={242}
+              height={300}
+              priority
+              className="h-full w-full object-cover"
             />
-            <span className="mark-serif text-6xl font-semibold text-[var(--mk-ink)]">
-              {markHero.monogram}
-            </span>
           </div>
         </motion.div>
       </div>
