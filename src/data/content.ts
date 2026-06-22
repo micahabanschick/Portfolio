@@ -18,7 +18,7 @@ export const hero = {
   name: "Micah Banschick",
   title: "Computational Physicist · Aerospace Researcher",
   tagline:
-    "I turn hard problems into simulations, models, and insight — across plasma propulsion, astrophysics, and deep-tech R&D.",
+    "I turn hard problems into simulations, models, and insight — across plasma propulsion, astrophysics, and quantitative finance.",
   // Rotating words after "I turn hard problems into …"
   rotatingWords: ["simulations", "models", "insight", "results"],
   location: "Stamford, CT",
@@ -32,6 +32,7 @@ export const about = {
   body: [
     "I'm a physics and mathematics researcher who turns hard problems into simulations, models, and insight. My work spans plasma-propulsion research at the Air Force Research Laboratory, stochastic modeling of binary supermassive black holes, and production software engineering.",
     "This fall I'm beginning my PhD in Aerospace Engineering at the University of Central Florida, joining the Hyperspace Center to advance plasma propulsion and deep-tech R&D. I hold an active DoD Secret clearance and am driven to apply simulation, data, and code toward fielding advanced physics.",
+    "I bring the same statistical rigor to financial markets: I research reinforcement-learning trading strategies and run backtests with the Husky Quantitative Group, a student-run hedge fund. Quantitative finance and trading are a genuine focus alongside my physics work.",
   ],
   stats: [
     { label: "GPA — Physics & Math", value: "3.63" },
@@ -39,6 +40,38 @@ export const about = {
     { label: "Manuscripts in prep", value: "3" },
   ],
 };
+
+export type Focus = {
+  icon: "rocket" | "orbit" | "chart";
+  title: string;
+  blurb: string;
+  tags: string[];
+};
+
+// Three research pillars — physics, astrophysics, and quantitative finance.
+export const focusAreas: Focus[] = [
+  {
+    icon: "rocket",
+    title: "Aerospace & Plasma Propulsion",
+    blurb:
+      "Modeling and simulating electrospray thruster plumes and ion-neutral collision physics at the Air Force Research Laboratory — design-space exploration for next-generation propulsion.",
+    tags: ["LAMMPS", "Plasma Modeling", "Spectroscopy", "Propulsion"],
+  },
+  {
+    icon: "orbit",
+    title: "Computational Astrophysics",
+    blurb:
+      "Stochastic, MCMC-based inference on binary supermassive black hole light curves — extracting physical properties from 20+ GB of observational data.",
+    tags: ["MCMC", "Python", "AstroPy", "Statistical Inference"],
+  },
+  {
+    icon: "chart",
+    title: "Quantitative Finance & Trading",
+    blurb:
+      "Reinforcement-learning trading strategies and systematic backtesting with the Husky Quantitative Group — bringing the rigor of physics to financial markets.",
+    tags: ["Reinforcement Learning", "Backtesting", "QuantConnect", "PyTorch"],
+  },
+];
 
 export type EducationItem = {
   school: string;
@@ -226,9 +259,20 @@ export const skills: SkillGroup[] = [
       "IgorPro",
       "VMD",
       "DIATOMIC",
-      "QuantConnect",
       "PyTorch",
       "stable-baselines3",
+    ],
+  },
+  {
+    category: "Quantitative Finance",
+    items: [
+      "Reinforcement Learning (PPO)",
+      "Backtesting",
+      "QuantConnect",
+      "VectorBT",
+      "Polars / DuckDB",
+      "Time-Series Analysis",
+      "Risk Modeling",
     ],
   },
 ];
